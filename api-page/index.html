@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lindaa API's</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loadingScreen">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>LOADING...</p>
+    </div>
+
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <span id="header"></span>
+                <span id="versionHeader"></span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img id="dynamicImage" class="banner mb-4" src="">
+        <div id="nameContainer">
+            <h1 id="name"></h1>
+            <div id="version"></div>
+        </div>
+        <p id="description" class="mb-3"></p>
+        
+        <div id="apiLinks" class="mb-4"></div>
+        
+        <input type="text" id="searchInput" class="form-control mb-4" placeholder="SEARCH API...">
+        <div class="category-filters mb-4"></div>
+        <div class="tab-content" id="apiContent"></div>
+    </div>
+
+    <div class="modal fade" id="apiResponseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title" id="apiResponseModalLabel"></h5>
+                        <p class="modal-desc mb-0" id="apiResponseModalDesc"></p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="position: relative;">
+                        <pre id="apiEndpoint"></pre>
+                        <button class="btn btn-copy copy-btn" data-target="apiEndpoint">COPY</button>
+                    </div>
+                    <div id="apiQueryInputContainer" class="my-3"></div>
+                    <div id="apiResponseLoading" class="d-none d-flex justify-content-center align-items-center py-3">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div style="position: relative;">
+                        <pre id="apiResponseContent" class="d-none mt-2"></pre>
+                        <button class="btn btn-copy copy-btn" data-target="apiResponseContent">COPY</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="submitQueryBtn" class="btn btn-dark">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
